@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "My Sample Extension",
+  "version": "1.0",
+  "description": "A simple Chrome extension example.",
+  "icons": {
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "action": {
+    "default_icon": "icons/icon-48.png",
+    "default_popup": "popup.html",
+    "default_title": "Click me!"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "activeTab",
+    "sidePanel",
+    "tabs",
+    "storage",
+    "scripting"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "content_script.js"
+      ]
+    }
+  ]
+}
